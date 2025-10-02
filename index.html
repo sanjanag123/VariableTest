@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memory Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    🌸 My Instagram Story Archives
+  </header>
+
+  <div class="card">
+    <h2>Choose a category</h2>
+    <div class="categories">
+      <a href="food.html" class="category" data-category="Food">🍜 Food <span class="badge" data-count-for="Food">0</span></a>
+      <a href="travel.html" class="category" data-category="Travel">✈️ Travel <span class="badge" data-count-for="Travel">0</span></a>
+      <a href="friends.html" class="category" data-category="Friends">👯 Friends <span class="badge" data-count-for="Friends">0</span></a>
+      <a href="concerts.html" class="category" data-category="Concerts">🎵 Concerts <span class="badge" data-count-for="Concerts">0</span></a>
+      <a href="selfcare.html" class="category" data-category="SelfCare">🛁 Self-Care <span class="badge" data-count-for="SelfCare">0</span></a>
+      <a href="nature.html" class="category" data-category="Nature">🌿 Nature <span class="badge" data-count-for="Nature">0</span></a>
+    </div>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const badges = document.querySelectorAll('[data-count-for]');
+      badges.forEach(badge => {
+        const cat = badge.getAttribute('data-count-for');
+        // Prefer parsed images array length; fallback to stored count
+        let count = 0;
+        try {
+          const imagesRaw = localStorage.getItem(`${cat}Images`);
+          if (imagesRaw) {
+            const arr = JSON.parse(imagesRaw);
+            if (Array.isArray(arr)) count = arr.length;
+          }
+        } catch (e) { /* ignore parse error and fallback */ }
+        if (!count) {
+          const storedCount = parseInt(localStorage.getItem(`${cat}Count`) || '0', 10);
+          if (!Number.isNaN(storedCount)) count = storedCount;
+        }
+        badge.textContent = count;
+      });
+    });
+  </script>
+  <script src="script.js" defer></script>
+</body>
+</html>

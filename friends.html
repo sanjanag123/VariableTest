@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Friends Memories</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-category="Friends">
+  <header>
+    👯 Friends
+  </header>
+
+  <div class="card">
+    <p><strong>Uploaded images:</strong> <span id="counter">0</span></p>
+    <input type="file" id="fileInput" accept="image/*" multiple>
+    <button onclick="goBack()">⬅ Back to Dashboard</button>
+    <div class="gallery" id="gallery"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

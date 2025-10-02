@@ -1,0 +1,98 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffe4ec;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: #ffb6c1;
+    padding: 15px;
+    text-align: center;
+    color: white;
+    font-size: 24px;
+  }
+  
+  .card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  
+  button {
+    background-color: #ff80aa;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  
+  button:hover {
+    background-color: #ff4d88;
+  }
+  
+  .categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .category {
+    background-color: #ff80aa;
+    color: white;
+    text-decoration: none;
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-size: 18px;
+    transition: background 0.3s;
+  }
+  
+  .category:hover {
+    background-color: #ff4d88;
+  }
+  
+  .badge {
+    display: inline-block;
+    margin-left: 8px;
+    background: #fff;
+    color: #ff4d88;
+    border-radius: 999px;
+    padding: 2px 8px;
+    font-size: 14px;
+    line-height: 1;
+    vertical-align: middle;
+  }
+  
+  /* 🎯 Gallery fix */
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+    justify-content: center;
+  }
+  
+  .gallery img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(255, 77, 136, 0.5);
+    opacity: 0.8;
+  }
+  
